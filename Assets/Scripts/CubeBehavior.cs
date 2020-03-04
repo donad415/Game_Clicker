@@ -5,20 +5,26 @@ using UnityEngine;
 public class CubeBehavior : MonoBehaviour
 {
 
-    public float _speed;
+    
     private float _timer;
     private Rigidbody rb;
-    private int _countDestroy;
-    
+
+    private Spawner sp;
+   
+
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        _countDestroy = 0;
+        sp = GameObject.Find("Spawner").GetComponent<Spawner>();
+        
+
     }
     void OnMouseDown()
     {
         Destroy(gameObject);
+        sp.countDestroy++;
     }
 
     void OnTriggerEnter(BoxCollider other)
@@ -30,19 +36,22 @@ public class CubeBehavior : MonoBehaviour
     {
 
         _timer += Time.deltaTime;
-        
-        transform.localScale *=  (1+Time.deltaTime/_speed);
-        if (_timer > _speed)
+       
+        transform.localScale *=  (1+Time.deltaTime/sp.speed);
+
+        if (_timer > sp.speed)
         {
             Destroy(gameObject);
-            _countDestroy++;
+            
         }
 
-        if (_countDestroy >= 10 && _speed > 1)
+        if (sp.countDestroy >= 10 &&
+            sp.speed> 1)
         {
-            _speed -= 0.5f;
+            sp.speed -= 0.5f;
+            sp.countDestroy = 0;
+            
         }
-
 
     }
 

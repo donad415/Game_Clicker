@@ -6,13 +6,15 @@ public class Spawner : MonoBehaviour
 {
     private float del;
     [SerializeField]
-    private GameObject Cube;
-    private float speed; 
+    public GameObject Cube;
+    public float speed;
+    public int countDestroy;
 
     void Start()
     {
-       speed =  GetComponent<CubeBehavior>()._speed;
-}
+        //speed =  GetComponent<CubeBehavior>()._speed;
+        speed = 10;
+    }
     private void Update()
     {
        

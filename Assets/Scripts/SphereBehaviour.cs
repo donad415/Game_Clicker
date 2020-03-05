@@ -6,42 +6,30 @@ using UnityEngine.UI;
 public class SphereBehaviour : MonoBehaviour
 {
     private float _timer;
-    private Spawner sp;
-    private ScoreText score;
+    public float speed;
+
+    public static event System.Action CountScore;
 
     void Start()
     {
-        score = GameObject.Find("Score").GetComponent<ScoreText>();
-        sp = GameObject.Find("Spawner").GetComponent<Spawner>();
+        speed = 10;
     }
 
     void OnMouseDown()
     {
         Destroy(gameObject);
-        score.score += 2;
-        sp.countDestroy++;
+        CountScore();
     }
-
 
     void Update()
     {
-
         _timer += Time.deltaTime;
 
-        transform.localScale *= (1 + Time.deltaTime / (sp.speed*0.3f));
+        transform.localScale *= (1 + Time.deltaTime / (speed * 0.3f));
 
-        if (_timer > sp.speed*0.3)
+        if (_timer >  speed * 0.3)
         {
             Destroy(gameObject);
         }
-
-        if (sp.countDestroy >= 10 &&
-            sp.speed > 1)
-        {
-            sp.speed -= 0.5f;
-            sp.countDestroy = 0;
-
-        }
-
     }
 }

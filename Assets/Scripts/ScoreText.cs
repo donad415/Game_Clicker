@@ -1,23 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class ScoreText : MonoBehaviour
 {
-    public int score;
-    public Text text;
 
+    public Text text;
+    public Spawner sp;
+    public int _score;
+
+    public GameObject Sphere;
+    public GameObject Cube;
+
+    private void Awake()
+    {
+        SphereBehaviour.CountScore += UpdateCounter;
+        CubeBehavior.CountScoreCube += UpdateCounterCube;
+    }
 
     void Start()
     {
-        score = 0;
+        _score = 0;
         text = gameObject.GetComponent<Text>();
+        text.text = _score + "";
     }
 
-    void Update()
+    private void UpdateCounter()
     {
-
-        text.text = score + "";
+        _score += 2;
+        text.text = _score + "";
     }
+
+    private void UpdateCounterCube()
+    {
+        text.text = ++_score + "";
+    }
+
+
 }

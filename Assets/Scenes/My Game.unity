@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304681724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -317,8 +317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 6417774444420370339, guid: 8b815132681883a4d90dc35c987a496c, type: 3}
   Sphere: {fileID: 7665526524258614407, guid: 55b2fefe2bcd064429ee67190fde18e9, type: 3}
-  speed: 0
-  countDestroy: 0
 --- !u!4 &416899526
 Transform:
   m_ObjectHideFlags: 0
@@ -327,8 +325,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416899524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4719637, y: -0.61621445, z: -12.179586}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -415,8 +413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd406cbaf6384244af7491789f9733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   text: {fileID: 524906334}
+  sp: {fileID: 416899525}
+  _score: 0
+  Sphere: {fileID: 7665526524258614407, guid: 55b2fefe2bcd064429ee67190fde18e9, type: 3}
+  Cube: {fileID: 0}
 --- !u!222 &524906336
 CanvasRenderer:
   m_ObjectHideFlags: 0

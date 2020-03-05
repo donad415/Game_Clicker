@@ -7,15 +7,18 @@ public class CubeBehavior : MonoBehaviour
         
     private float _timer;
     private Spawner sp;
+    private ScoreText score;
        
     void Start()
     {
+        score = GameObject.Find("Score").GetComponent<ScoreText>();
         sp = GameObject.Find("Spawner").GetComponent<Spawner>();
     }
 
     void OnMouseDown()
     {
         Destroy(gameObject);
+        score.score ++;
         sp.countDestroy++;
     }
 

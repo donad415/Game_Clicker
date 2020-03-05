@@ -4,33 +4,21 @@ using UnityEngine;
 
 public class CubeBehavior : MonoBehaviour
 {
-
-    
+        
     private float _timer;
-    private Rigidbody rb;
-
     private Spawner sp;
-   
-
-
-
+       
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         sp = GameObject.Find("Spawner").GetComponent<Spawner>();
-        
-
     }
+
     void OnMouseDown()
     {
         Destroy(gameObject);
         sp.countDestroy++;
     }
 
-    void OnTriggerEnter(BoxCollider other)
-    {
-        rb.AddForce(transform.forward*0.1f);
-    }
 
     void Update()
     {

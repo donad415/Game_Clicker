@@ -36,7 +36,6 @@ public class Spawner : MonoBehaviour
             _countPoints = 0;
             Sphere.GetComponent<SphereBehaviour>().Speed = Speed;
             Cube.GetComponent<CubeBehavior>().Speed = Speed;
-            Debug.Log(Speed);
         }
 
         _del += Time.deltaTime;

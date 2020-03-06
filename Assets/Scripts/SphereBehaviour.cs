@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class SphereBehaviour : MonoBehaviour
 {
     private float _timer;
-    public float speed;
+    public float Speed;
 
     public static event System.Action CountScore;
 
     void Start()
     {
-        speed = 10;
+        Speed = 10;
     }
 
     void OnMouseDown()
@@ -25,9 +25,9 @@ public class SphereBehaviour : MonoBehaviour
     {
         _timer += Time.deltaTime;
 
-        transform.localScale *= (1 + Time.deltaTime / (speed * 0.3f));
+        transform.localScale *= (1 + Time.deltaTime / (Speed * 0.3f));
 
-        if (_timer >  speed * 0.3)
+        if (_timer >  Speed * 0.3)
         {
             Destroy(gameObject);
         }

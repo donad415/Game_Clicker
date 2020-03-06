@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private float del;
+    private float _del;
     public GameObject Cube;
     public GameObject Sphere;
-    private float speed;
+    public float Speed;
     private int _countPoints;
 
     private void Awake()
@@ -19,8 +19,8 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        del = 0;
-        speed = 10;
+        _del = 0;
+        Speed = 10;
     }
 
     void UpScore()
@@ -30,17 +30,17 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (_countPoints == 10 && speed>1)
+        if (_countPoints == 10 && Speed>1)
         {
-            speed -= 0.5f;
+            Speed -= 0.5f;
             _countPoints = 0;
-            Sphere.GetComponent<SphereBehaviour>().speed = speed;
-            Cube.GetComponent<CubeBehavior>().speed = speed;
-            Debug.Log(speed);
+            Sphere.GetComponent<SphereBehaviour>().Speed = Speed;
+            Cube.GetComponent<CubeBehavior>().Speed = Speed;
+            Debug.Log(Speed);
         }
 
-        del += Time.deltaTime;
-        if (del > speed/10)
+        _del += Time.deltaTime;
+        if (_del > Speed/10)
         {
             int k = Random.Range(0, 100);
             if (k > 80)
@@ -53,7 +53,7 @@ public class Spawner : MonoBehaviour
                 Instantiate(Cube, new Vector2(Random.Range(-12f, 12f),
                     Random.Range(-4.5f, 4.5f)), Quaternion.identity);
             }
-            del = 0;
+            _del = 0;
         }
     }
 }

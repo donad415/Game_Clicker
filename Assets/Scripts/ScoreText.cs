@@ -9,7 +9,7 @@ public class ScoreText : MonoBehaviour
 {
 
     public Text Text;
-    public Spawner Sp;
+    public Spawner Spawner;
     public int Score;
 
     public GameObject Sphere;
@@ -25,18 +25,19 @@ public class ScoreText : MonoBehaviour
     {
         Score = 0;
         Text = gameObject.GetComponent<Text>();
-        Text.text = Score + "";
+        Text.text = Score.ToString();
     }
 
     private void UpdateCounter()
     {
         Score += 2;
-        Text.text = Score + "";
+        Text.text = Score.ToString();
     }
 
     private void UpdateCounterCube()
     {
-        Text.text = ++Score + "";
+        Score++;
+        Text.text = Score.ToString();
     }
 
 

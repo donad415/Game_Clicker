@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LevelController : MonoBehaviour
 {
     private Text _text;
-    public Spawner Sp;
+    public Spawner Spawner;
     private float _speed;
     private int _level;
 
@@ -19,12 +19,12 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
-        if (_speed > Sp.GetComponent<Spawner>().Speed)
+        if (_speed > Spawner.GetComponent<Spawner>().Speed)
         {
             _level++;
-            _speed = Sp.GetComponent<Spawner>().Speed;
+            _speed = Spawner.GetComponent<Spawner>().Speed;
         }
 
-        _text.text = _level + "";
+        _text.text = _level.ToString();
     }
 }

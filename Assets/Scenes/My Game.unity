@@ -509,11 +509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd406cbaf6384244af7491789f9733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: {fileID: 0}
-  Sp: {fileID: 0}
+  Text: {fileID: 524906334}
+  Spawner: {fileID: 416899525}
   Score: 0
   Sphere: {fileID: 7665526524258614407, guid: 55b2fefe2bcd064429ee67190fde18e9, type: 3}
-  Cube: {fileID: 0}
+  Cube: {fileID: 6417774444420370339, guid: 8b815132681883a4d90dc35c987a496c, type: 3}
 --- !u!222 &524906336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1091,4 +1091,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369410d1ed84fee48b600a5374b32d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sp: {fileID: 416899525}
+  Spawner: {fileID: 416899525}

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private float _del;
+    private float _timer;
     public GameObject Cube;
     public GameObject Sphere;
     public float Speed;
@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        _del = 0;
+        _timer = 0;
         Speed = 10;
     }
 
@@ -38,8 +38,8 @@ public class Spawner : MonoBehaviour
             Cube.GetComponent<CubeBehavior>().Speed = Speed;
         }
 
-        _del += Time.deltaTime;
-        if (_del > Speed/10)
+        _timer += Time.deltaTime;
+        if (_timer > Speed/10)
         {
             int k = Random.Range(0, 100);
             if (k > 80)
@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
                 Instantiate(Cube, new Vector2(Random.Range(-12f, 12f),
                     Random.Range(-4.5f, 4.5f)), Quaternion.identity);
             }
-            _del = 0;
+            _timer = 0;
         }
     }
 }
